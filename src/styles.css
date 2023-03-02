@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Labrada&family=Righteous&family=Roboto+Mono:wght@500&family=Roboto+Slab&family=Roboto:wght@500&display=swap');
+
+body {
+    background-image: url("./assets/himg.jpeg");
+    /* background-color: rgba(0, 0, 0, 0.515); */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    font-family: 'Righteous', cursive;
+
+    background-color: rgba(0, 0, 0, 0.639);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.639);
+
+}

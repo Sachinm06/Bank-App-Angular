@@ -1,5 +1,8 @@
 <div class="container-fluid">
   
+
+ <h3 class="text-white ps-5 mt-5"> {{data}}</h3>
+
   
   <div class="row">
   
@@ -16,14 +19,14 @@
           <form class="form">
             <span class="title text-white">LOGIN</span>
             <div class="form_control">
-              <input required="" class="input" type="text">
-              <label class="label">Account Number</label>
+              <input (change)="acnoChange($event)" required="" class="input" type="text" [placeholder]="data1">
+              <label id="u1" name="uname" class="label"></label>
             </div>
             <div class="form_control">
-              <input required="" class="input" type="password">
-              <label class="label">Password</label>
+              <input (change)="pass($event)" required="" class="input" type="password">
+              <label  id="p1" name="passW" class="label">Password</label>
             </div>
-            <button>Login</button>
+            <button (click)="login()">Login</button>
       
             <span class="bottom_text text-white">Don't have an account? <label class="swtich" for="register_toggle">Sign Up</label> </span>
           </form>
@@ -41,7 +44,7 @@
               <input required="" class="input" type="password">
               <label class="label">Password</label>
             </div>
-            <button>Sign Up</button>
+            <button  >Sign Up</button>
       
             <span class="bottom_text text-white">Already have an account? <label class="swtich" for="register_toggle">Sign In</label> </span>
           </form>

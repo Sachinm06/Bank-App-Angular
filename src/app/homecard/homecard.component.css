@@ -13,7 +13,7 @@
 }
 
 .card {
-    margin-top: 25vh;
+    margin-top: 10vh;
   animation-name: rotate_500;
   background-color: var(--primary);
   background-image: radial-gradient(circle at 100% 0%,hsla(0,0%,100%,0.08) 29.5%,hsla(0,0%,100%,0) 30%),

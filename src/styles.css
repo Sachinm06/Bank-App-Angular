@@ -18,6 +18,16 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900');
 
+@media screen and (max-width:510){
+  h1{
+    font-size: 20px;
+    color: #F7971E;
+    
+  }
+}
+.fd{
+  width: 100%;
+}
 
 h1 {
 text-transform: Uppercase;
@@ -80,18 +90,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.465);
 
 }
+
   /* ----------------------footer-------------------- */
 
-  .c1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    margin: -8px;
-     background: #e0e5ec;
-  }
-  
 
  

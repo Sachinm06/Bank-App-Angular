@@ -151,8 +151,8 @@ form button:active {
   -webkit-text-fill-color: transparent;
   animation: textclip 4s linear infinite;
   display: inline-block;
-      font-size:20px;
-      margin-top: 4rem;
+      font-size:25px;
+      margin-top: 3.5rem;
       margin-left: -3vw;      
 }
 

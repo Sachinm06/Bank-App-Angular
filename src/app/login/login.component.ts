@@ -9,6 +9,7 @@ export class LoginComponent {
 
   data="Your Perfect Banking Partner"
   data1="Enter your account number"
+  data2="Enter your password"
   acno:any
   passwd:any
 

@@ -13,7 +13,7 @@ export class LoginComponent {
   acno:any
   passwd:any
 
-  userDetails={
+  userDetails:any={
     1000:{username:"anu",acno:1000,password:"abc123",balance:0},
     1001:{username:"arun",acno:1001,password:"abc123",balance:0},
     1002:{username:"amal",acno:1002,password:"abc123",balance:0},
@@ -22,7 +22,25 @@ export class LoginComponent {
   }
 
 login(){
-  alert("its working")
+  // alert("its working")
+var acnum=this.acno
+var psw=this.passwd
+var userDetails=this.userDetails
+
+if(acnum in userDetails){
+  if(psw==userDetails[acnum]["password"]){
+    alert("Login success")
+  }
+  else{
+    alert("Wrong Password")
+  }
+
+}
+else{
+  alert("Wrong Ac Number")
+}
+
+
 }
 acnoChange(event:any){
  this.acno=event.target.value;

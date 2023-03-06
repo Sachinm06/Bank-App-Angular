@@ -23,14 +23,14 @@
           <form class="form">
             <span class="title text-white">LOGIN</span>
             <div class="form_control">
-              <input (change)="acnoChange($event)" required="" class="input" type="text" [placeholder]="data1">
-              <label id="u1" name="uname" class="label"></label>
+              <input #acno  id="u1" name="uname" class="input" type="text" [placeholder]="data1">
+              <label class="label"></label>
             </div>
             <div class="form_control">
-              <input (change)="pass($event)" required="" class="input" type="password" [placeholder]="data2">
-              <label  id="p1" name="passW" class="label" ></label>
+              <input #psw  id="p1" name="passW" class="input" type="password" [placeholder]="data2">
+              <label class="label" ></label>
             </div>
-            <button (click)="login()" class="fs-5">Login</button>
+            <button (click)="login(acno,psw)" class="fs-5">Login</button>
       
             <span class="bottom_text text-white ">Don't have an account? <label class="swtich" for="register_toggle">Sign Up</label> </span>
           </form>

@@ -21,36 +21,80 @@ export class LoginComponent {
 
   }
 
-login(){
-  // alert("its working")
-var acnum=this.acno
-var psw=this.passwd
-var userDetails=this.userDetails
+// login(){
+//   // alert("its working")
+// var acnum=this.acno
+// var psw=this.passwd
+// var userDetails=this.userDetails
 
-if(acnum in userDetails){
-  if(psw==userDetails[acnum]["password"]){
-    alert("Login success")
-  }
-  else{
-    alert("Wrong Password")
-  }
+// if(acnum in userDetails){
+//   if(psw==userDetails[acnum]["password"]){
+//     alert("Login success")
+//   }
+//   else{
+//     alert("Wrong Password")
+//   }
 
-}
-else{
-  alert("Wrong Ac Number")
-}
+// }
+// else{
+//   alert("Wrong Ac Number")
+// }
 
 
-}
-acnoChange(event:any){
- this.acno=event.target.value;
- console.log(this.acno); 
-}
-pass(event:any){
-  this.passwd=event.target.value
-  console.log(this.passwd);
+// }
+// acnoChange(event:any){
+//  this.acno=event.target.value;
+//  console.log(this.acno); 
+// }
+// pass(event:any){
+//   this.passwd=event.target.value
+//   console.log(this.passwd);
   
+// }
+
+// login(){
+//   // alert("its working")
+// var acnum=this.acno
+// var psw=this.passwd
+// var userDetails=this.userDetails
+
+// if(acnum in userDetails){
+//   if(psw==userDetails[acnum]["password"]){
+//     alert("Login success")
+//   }
+//   else{
+//     alert("Wrong Password")
+//   }
+
+// }
+// else{
+//   alert("Wrong Ac Number")
+// }
+
+
+// }
+
+login(acnum:any,psw:any){
+  var acnum=acnum.value
+  var psw=psw.value
+  var userDetails=this.userDetails
+
+  if(acnum in userDetails){
+    if(acnum in userDetails){
+      if(psw==userDetails[acnum]["password"]){
+        alert("Login success")
+          }
+          else{
+            alert("Wrong Password")
+          }
+        
+        }
+        else{
+          alert("Wrong Ac Number")
+      }
+    }
+  }
 }
 
-}
+
 

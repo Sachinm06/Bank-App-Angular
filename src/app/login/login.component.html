@@ -1,69 +1,52 @@
 <div class="container-fluid">
-  
-<div class="ms-5 tagline">
-  <!-- <div class="neon"> {{data}}</div> -->
-  <h4 class="animate-charcter "> {{data}}</h4>
 
-   <!-- <h3 class="text-white ps-5 mt-2" > {{data}}</h3> -->
-</div>
+  <div class="ms-5 tagline">
+    <!-- <div class="neon"> {{data}}</div> -->
+    <h4 class="animate-charcter "> {{data}}</h4>
 
-  
-  <div class="row">
-  
-  
-    <div class=" col-lg-6 col-md-12 col-sm-12 col-12">
-      
-      <app-homecard></app-homecard>
-  
+    <!-- <h3 class="text-white ps-5 mt-2" > {{data}}</h3> -->
   </div>
-    
-      <div class="container col-lg-6 col-md-12  col-sm-12">
-        <input id="register_toggle" type="checkbox">
-        <div class="slider">
-          <form class="form">
-            <span class="title text-white">LOGIN</span>
-            <div class="form_control">
-              <input [(ngModel)]="acno"   name="uname" class="input" type="text" [placeholder]="data1">
-              <label id="u1" class="label"></label>
-            </div>
-            <div class="form_control">
-              <input [(ngModel)]="passwd"  name="passW" class="input" type="password" [placeholder]="data2">
-              <label id="p1" class="label" ></label>
-            </div>
-            <button (click)="login()" class="fs-5">Login</button>
-      
-            <p class="text-white ">Dont have an account ? <a class="text-info" style="text-decoration:none ;" href="register">Create account</a></p>
 
-          </form>
-         
-         <!-- sing up form -->
-         
-          <!-- <form class="form">
-            <span class="title text-white">SIGN UP</span>
-            <div class="form_control">
-              <input required="" class="input" type="text">
-              <label class="label">Account Number</label>
-            </div>
-            <div class="form_control">
-              <input required="" class="input" type="email">
-              <label class="label">Email</label>
-            </div>
-            <div class="form_control">
-              <input required="" class="input" type="password">
-              <label class="label">Password</label>
-            </div>
-            <button class="" >Sign Up</button>
-      
-            <span class="bottom_text text-white">Already have an account? <label class="swtich" for="register_toggle">Sign In</label> </span>
-          </form> -->
-      
-          
+
+  <div class="row">
+
+
+    <div class=" col-lg-6 col-md-12 col-sm-12 col-12">
+
+      <app-homecard></app-homecard>
+
+    </div>
+
+    <div class="container col-lg-6 col-md-12  col-sm-12">
+      <input id="register_toggle" type="checkbox">
+      <div class="slider">
+        <form class="form">
+          <span class="title text-white">LOGIN</span>
+          <div class="form_control">
+            <input [(ngModel)]="acno" name="uname" class="input" type="text" [placeholder]="data1">
+            <label id="u1" class="label"></label>
           </div>
+          <div class="form_control">
+            <input [(ngModel)]="passwd" name="passW" class="input" type="password" [placeholder]="data2">
+            <label id="p1" class="label"></label>
+          </div>
+          <button (click)="login()" class="fs-5">Login</button>
+
+          <p class="text-white ">Dont have an account ? <a class="text-info" style="text-decoration:none ;"
+              href="register">Create account</a></p>
+
+        </form>
+
+        <!-- sing up form -->
+
+    
+
       </div>
-    
-    
-    
-  
-  
+    </div>
+
+
+
+
+
   </div>
 </div>

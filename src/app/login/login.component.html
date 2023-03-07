@@ -23,21 +23,22 @@
           <form class="form">
             <span class="title text-white">LOGIN</span>
             <div class="form_control">
-              <input #acno  id="u1" name="uname" class="input" type="text" [placeholder]="data1">
-              <label class="label"></label>
+              <input [(ngModel)]="acno"   name="uname" class="input" type="text" [placeholder]="data1">
+              <label id="u1" class="label"></label>
             </div>
             <div class="form_control">
-              <input #psw  id="p1" name="passW" class="input" type="password" [placeholder]="data2">
-              <label class="label" ></label>
+              <input [(ngModel)]="passwd"  name="passW" class="input" type="password" [placeholder]="data2">
+              <label id="p1" class="label" ></label>
             </div>
-            <button (click)="login(acno,psw)" class="fs-5">Login</button>
+            <button (click)="login()" class="fs-5">Login</button>
       
-            <span class="bottom_text text-white ">Don't have an account? <label class="swtich" for="register_toggle">Sign Up</label> </span>
+            <p class="text-white ">Dont have an account ? <a class="text-info" style="text-decoration:none ;" href="register">Create account</a></p>
+
           </form>
          
          <!-- sing up form -->
          
-          <form class="form">
+          <!-- <form class="form">
             <span class="title text-white">SIGN UP</span>
             <div class="form_control">
               <input required="" class="input" type="text">
@@ -54,7 +55,7 @@
             <button class="" >Sign Up</button>
       
             <span class="bottom_text text-white">Already have an account? <label class="swtich" for="register_toggle">Sign In</label> </span>
-          </form>
+          </form> -->
       
           
           </div>

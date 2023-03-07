@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,80 +21,30 @@ export class LoginComponent {
     1003:{username:"mega",acno:1003,password:"abc123",balance:0},
 
   }
-
-// login(){
-//   // alert("its working")
-// var acnum=this.acno
-// var psw=this.passwd
-// var userDetails=this.userDetails
-
-// if(acnum in userDetails){
-//   if(psw==userDetails[acnum]["password"]){
-//     alert("Login success")
-//   }
-//   else{
-//     alert("Wrong Password")
-//   }
-
-// }
-// else{
-//   alert("Wrong Ac Number")
-// }
+constructor(private router:Router){ }
 
 
-// }
-// acnoChange(event:any){
-//  this.acno=event.target.value;
-//  console.log(this.acno); 
-// }
-// pass(event:any){
-//   this.passwd=event.target.value
-//   console.log(this.passwd);
-  
-// }
+login(){
+var acnum=this.acno
+var psw=this.passwd
+var userDetails=this.userDetails
 
-// login(){
-//   // alert("its working")
-// var acnum=this.acno
-// var psw=this.passwd
-// var userDetails=this.userDetails
-
-// if(acnum in userDetails){
-//   if(psw==userDetails[acnum]["password"]){
-//     alert("Login success")
-//   }
-//   else{
-//     alert("Wrong Password")
-//   }
-
-// }
-// else{
-//   alert("Wrong Ac Number")
-// }
-
-
-// }
-
-login(acnum:any,psw:any){
-  var acnum=acnum.value
-  var psw=psw.value
-  var userDetails=this.userDetails
-
-  if(acnum in userDetails){
-    if(acnum in userDetails){
-      if(psw==userDetails[acnum]["password"]){
-        alert("Login success")
-          }
-          else{
-            alert("Wrong Password")
-          }
-        
-        }
-        else{
-          alert("Wrong Ac Number")
-      }
-    }
+if(acnum in userDetails){
+  if(psw==userDetails[acnum]["password"]){
+    // alert("Login success")
+    this.router.navigateByUrl("dashboard")
   }
+  else{
+    alert("Wrong Password")
+  }
+
+}
+else{
+  alert("Wrong Ac Number")
+}
+
+
+}
 }
 
 

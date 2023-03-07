@@ -51,3 +51,39 @@ HTML - view
       1.2.1  --> event binding (eventname)="method()"
       1.2.2  --> $ (doller) event binding (eventname)="method($event)"
       1.2.3  --> event binding whith template rendring variable  #variableName
+
+ 2.Two Way binding
+
+   2.1 ngModel  [(ngModel)]="variable"
+         -formsModule  -module used to apply ngModel    
+
+Path setting in angular
+----------------------
+
+path set in root moduke routing file
+each page need defferent paths
+landing page path is empty
+
+Redirection in angular
+---------------------
+
+method - navigateByUrl(path)
+class  - Router
+module - AppRoutingModule
+
+
+folder   - file - class - methods
+packages - module
+
+Dependancy Injection  (IMP)
+-------------------
+
+to use a method of class in another class
+
+in constructor
+
+   accessSpecifier reference: ClassName
+
+    access specifier -private / public
+    - private : can use the injecting class only in that class
+    - public  : can use the injecting class in other classess of that line 

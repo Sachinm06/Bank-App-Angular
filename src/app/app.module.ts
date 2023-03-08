@@ -15,7 +15,7 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     HomecardComponent,
     DashboardComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

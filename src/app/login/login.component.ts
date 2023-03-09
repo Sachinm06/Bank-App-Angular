@@ -17,28 +17,43 @@ export class LoginComponent {
 constructor(private router:Router,private ds:DataService){ }
 
 
-login(){
-var acnum=this.acno
-var psw=this.passwd
-var userDetails=this.ds.userDetails
+// login(){
+// var acnum=this.acno
+// var psw=this.passwd
+// var userDetails=this.ds.userDetails
 
-if(acnum in userDetails){
-  if(psw==userDetails[acnum]["password"]){
-    // alert("Login success")
+// if(acnum in userDetails){
+//   if(psw==userDetails[acnum]["password"]){
+//     // alert("Login success")
+//     this.router.navigateByUrl("dashboard")
+//   }
+//   else{
+//     alert("Wrong Password")
+//   }
+
+// }
+// else{
+//   alert("Wrong Ac Number")
+// }
+
+
+// }
+
+
+
+login(){
+  var acnum=this.acno
+  var psw=this.passwd
+  const result=this.ds.login(acnum,psw)
+  
+  if(result){
+    alert("login success")
     this.router.navigateByUrl("dashboard")
   }
   else{
-    alert("Wrong Password")
+    alert("incorrect acc no or password")
   }
-
-}
-else{
-  alert("Wrong Ac Number")
 }
 
 
 }
-}
-
-
-

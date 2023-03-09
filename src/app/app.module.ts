@@ -8,6 +8,7 @@ import { HomecardComponent } from './homecard/homecard.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
+import { RegistercardComponent } from './registercard/registercard.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
     HomecardComponent,
     DashboardComponent,
     RegisterComponent,
+    RegistercardComponent,
   ],
   imports: [
     BrowserModule,

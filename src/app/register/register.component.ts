@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../Services/data.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class RegisterComponent {
   uname:any
   psw:any
 
-  constructor(private ds: DataService){}
+  constructor(private ds: DataService,private router:Router){}
 
   register(){
   var acno = this.acno
@@ -21,6 +22,7 @@ export class RegisterComponent {
   const result =this.ds.register(acno,uname,psw)
   if(result){
     alert('registred')
+    this.router.navigateByUrl("")
   }
   else{
     alert('user already present')

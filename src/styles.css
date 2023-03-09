@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Labrada&family=Righteous&family=Roboto+Mono:wght@500&family=Roboto+Slab&family=Roboto:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Crimson+Text:wght@600&family=Labrada&family=Righteous&family=Roboto+Mono:wght@500&family=Roboto+Slab&family=Roboto:wght@500&display=swap');
 body {
     background-image: url("./assets/h4.jpeg");
     /* background-color: rgba(0, 0, 0, 0.515); */
@@ -58,16 +58,6 @@ z-index: -2;
 text-shadow: 10px 10px 10px rgba(0,0,0,.5), 20px 20px 20px rgba(0,0,0,.4), 30px 30px 30px rgba(0,0,0,.1);
 mix-blend-mode: multiply; }
 
-h2 {
-margin-top: -1.15em;
-font-family: 'Pirata One', cursive;
-font-size: 3rem;
-color: #F7971E;
-text-align: center;}
-
-h2 spam {
-  font-size: .5em; 
-}
 
 header {
     color: white;

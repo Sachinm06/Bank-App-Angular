@@ -3,7 +3,7 @@
 
 <div class="row">
 
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
 
         <h2 class=" welcome mt-5">WELCOME {{user}}</h2>
 
@@ -11,18 +11,18 @@
     </div>
 
 
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
 
         <div class="card mt-4">
             <!-- <h2 class="mt-4" style="font-family: 'Crimson Text', serif;
             ">DEPOSIT</h2> -->
             <p style="color:rgba(255, 255, 255, 0.313);font-size: 15px;" class="mt-3">Add Money To Your Bank Account</p>
             <form class="dform" action="">
-                <input class=" mb-3 " required="" type="number" placeholder="Enter Amount">
-                <input class=" mb-3" required="" type="text" placeholder="">
-                <input class=" mb-4" required="" type="text" placeholder="">
+                <input [(ngModel)]="acno" id="ac1" name="acno" class=" mb-3 " required="" type="number" placeholder="Enter Amount">
+                <input [(ngModel)]="psw" id="pw2" name="password" class=" mb-3" required="" type="text" placeholder="">
+                <input [(ngModel)]="amt" id="amt1" name="amnt" class=" mb-4" required="" type="text" placeholder="">
                 <hr>
-                <button class="dbtn btn btn-success fs-2 mt-3">DEPOSIT</button>
+                <button (click)="deposit()" class="dbtn btn btn-success fs-2 mt-3">DEPOSIT</button>
             </form>
 
 
@@ -31,7 +31,7 @@
     </div>
 
 
-    <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="col-lg-4 col-md-6 col-sm-12">
 
 
         <div class="card mt-4 card2">
@@ -39,9 +39,9 @@
             ">DEPOSIT</h2> -->
             <p style="color:rgba(255, 255, 255, 0.313);font-size: 15px;" class="mt-3 mb-4">Withdraw Money from Your Bank Account</p>
             <form class="dform" action="">
-                <input class="d2 mb-3 " required="" type="number" placeholder="Enter Amount">
-                <input class="d2 mb-3" required="" type="text" placeholder="">
-                <input class="d2 mb-4" required="" type="text" placeholder="">
+                <input id="ac2" class="d2 mb-3 " required="" type="number" placeholder="Enter Amount">
+                <input id="pw2" class="d2 mb-3" required="" type="text" placeholder="">
+                <input id="amt2" class="d2 mb-4" required="" type="text" placeholder="">
                 <hr>
                 <button class="dbtn btn btn-danger fs-2 mt-3">WITHDRAW</button>
             </form>

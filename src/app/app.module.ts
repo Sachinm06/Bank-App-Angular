@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 import { RegistercardComponent } from './registercard/registercard.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RegistercardComponent } from './registercard/registercard.component';
     DashboardComponent,
     RegisterComponent,
     RegistercardComponent,
+    TransactionComponent,
   ],
   imports: [
     BrowserModule,

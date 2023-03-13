@@ -9,7 +9,7 @@ import { DataService } from '../Services/data.service';
 export class DashboardComponent {
 
   user: any
-  result:any
+  result: any
 
   acno: any
   psw: any
@@ -30,27 +30,27 @@ export class DashboardComponent {
     var psw = this.psw
     var amt = this.amt
     const result = this.ds.deposit(acno, psw, amt)
-    if(result){
+    if (result) {
       alert(`your account has been credited with amount ${amt} and the available balance is ${result}`)
     }
-    else{
+    else {
       alert('Incorrect account number or password')
     }
   }
 
-  withdrew(){
+  withdrew() {
     var acno = this.acno1
     var psw = this.psw1
     var amt = this.amt1
     const result = this.ds.withdrew(acno, psw, amt)
-    if(result){
+    if (result) {
       alert(`your account has been debited with amount ${amt} and the available balance is ${result}`)
     }
-    else{
+    else {
       alert('Incorrect account number or password')
     }
   }
-  }
-  
+}
+
 
 

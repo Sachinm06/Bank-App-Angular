@@ -6,6 +6,7 @@
     <div class="col-lg-4 col-md-6 col-sm-12">
 
         <h2 class=" welcome mt-5">WELCOME {{user}}</h2>
+        <a  href="/transaction">View Transation Details</a>
     </div>
 
 
@@ -40,9 +41,10 @@
             <p style="color:rgba(255, 255, 255, 0.313);font-size: 15px;" class="mt-3 mb-4">Withdraw Money from Your Bank
                 Account</p>
             <form class="dform" action="">
-                <input [(ngModel)]="acno1" id="ac2" class="d2 mb-3 " required="" type="number" placeholder="Account Number">
-                <input [(ngModel)]="psw1" id="pw2" class="d2 mb-3" required="" type="password" placeholder="Password">
-                <input [(ngModel)]="amt1" id="amt2" class="d2 mb-4" required="" type="number" placeholder="Amount">
+                <input [(ngModel)]="acno1" name="acno2" id="ac2" class="d2 mb-3 " required="" type="number"
+                    placeholder="Account Number">
+                <input [(ngModel)]="psw1" name="psw2" id="pw2" class="d2 mb-3" required="" type="password" placeholder="Password">
+                <input [(ngModel)]="amt1" name="amt2" id="amt2" class="d2 mb-4" required="" type="number" placeholder="Amount">
                 <hr>
                 <button (click)="withdrew()" class="dbtn btn btn-danger fs-2 mt-3">WITHDRAW</button>
             </form>

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   currentUser: any
+  currentAcno: any
 
   userDetails: any = {
     1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transaction: [] },
@@ -14,6 +15,8 @@ export class DataService {
     1003: { username: "mega", acno: 1003, password: "abc123", balance: 0, transaction: [] },
 
   }
+  constructor() { }
+
   register(acno: any, uname: any, psw: any) {
     var userDetails = this.userDetails
     if (acno in userDetails) {
@@ -33,6 +36,7 @@ export class DataService {
       if (psw == userDetails[acno]["password"]) {
         //store current user
         this.currentUser = userDetails[acno]["username"]
+        this.currentAcno = acno
         return true
       }
       else {
@@ -52,13 +56,13 @@ export class DataService {
       if (psw == userDetails[acno]["password"]) {
         userDetails[acno]["balance"] += amount
 
-//add transaction data
-userDetails[acno]["transaction"].push(
-  {
-    type:"credit",
-    amount:amount
-  }
-)
+        //add transaction data
+        userDetails[acno]["transaction"].push(
+          {
+            type: "credit",
+            amount: amount
+          }
+        )
 
         return userDetails[acno]["balance"]
 
@@ -85,14 +89,14 @@ userDetails[acno]["transaction"].push(
         if (amount <= userDetails[acno]["balance"]) {
           userDetails[acno]["balance"] -= amount
 
-//add transaction data
-userDetails[acno]["transaction"].push(
-  {
-    type:"debit",
-    amount:amount
-  }
-)
-console.log(userDetails);
+          //add transaction data
+          userDetails[acno]["transaction"].push(
+            {
+              type: "debit",
+              amount: amount
+            }
+          )
+          console.log(userDetails);
 
 
           return userDetails[acno]["balance"]
@@ -112,6 +116,9 @@ console.log(userDetails);
     }
   }
 
-  constructor() { }
+  getTransaction(acno: any) {
+    return this.userDetails[acno]["transaction"]
+  }
+
 }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../Services/data.service';
 
 @Component({
   selector: 'app-transaction',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent {
+
+  transactionArray: any
+
+  constructor(private ds: DataService) {
+    this.transactionArray = this.ds.getTransaction(this.ds.currentAcno)
+    console.log(this.transactionArray);
+
+  }
 
 }

@@ -1,18 +1,19 @@
-<div class="text-white mt-5 text-center ">
-    <table class="container w-50 bg-info " style="border-radius: 10px;">
+
+<div class="container w-50 mt-2 p-3 text-center text-white " style="background-color: rgba(34, 107, 184, 0); font-size: 1em; border-radius: 20px;">
+
+    <table class="text-center w-100">
         <thead>
-            <th class="border">TYPE</th>
-            <th>AMOUNT</th>
+            <tr>
+                <th class="border">Type</th>
+                <th class="border">Amount</th>
+            </tr>
         </thead>
-        <tbody class="border">
-            <tr >
-                <td class="border">Credit</td>
-                <td>500</td>
+        <tbody>
+            <tr *ngFor="let i of transactionArray">
+                <td class="border">{{i.type}}</td>
+                <td class="border">{{i.amount}}</td>
             </tr>
-            <tr class="border">
-                <td class="border"> debit</td>
-                <td>500</td>
-            </tr>
+           
         </tbody>
     </table>
 </div>

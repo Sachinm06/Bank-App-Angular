@@ -98,4 +98,32 @@ All components can access the content of service file
 create  --->     ng generate service filename   ==> ng g s filename
 
 
+Angular dierectives
+-------------------
+
+used to manipulate DOM 
+
+1.component dierectives
+
+2.Structual dierectives
+    - *ngFor
+
+
+Form Validation in angular
+-------------------------
+    Form creation in angular
+        
+        1.template driven form
+        2.model driven form
+
+     Model Driven form
+     -----------------
+
+     -reactive form
+        -ReactiveFormsModule  - module used to build model form 
+        -FormBuilder          - class used to create model form 
+
+        -a model contain   -form group
+                           -array
+                           -controller
 

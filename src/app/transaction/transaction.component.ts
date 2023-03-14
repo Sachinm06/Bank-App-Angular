@@ -12,6 +12,7 @@ export class TransactionComponent {
 
   constructor(private ds: DataService) {
     this.transactionArray = this.ds.getTransaction(this.ds.currentAcno)
+
     console.log(this.transactionArray);
 
   }

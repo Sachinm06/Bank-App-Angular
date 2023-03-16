@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  
+
 
 
   <div class="row">
@@ -15,15 +15,21 @@
     <div class="container col-lg-6 col-md-12  col-sm-12">
       <input id="register_toggle" type="checkbox">
       <div class="slider">
-        <form class="form">
+        <form [formGroup]="loginForm" class="form">
           <span class="title text-white">LOGIN</span>
           <div class="form_control">
-            <input [(ngModel)]="acno" name="uname" class="input" type="text" [placeholder]="data1">
-            <label id="u1" class="label"></label>
+            <input formControlName="acno" name="uname" id="u1" class="input" type="text" [placeholder]="data1">
           </div>
+          <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class="text-danger">Include numbers only</p>
+          </div>
+
+
           <div class="form_control">
-            <input [(ngModel)]="passwd" name="passW" class="input" type="password" [placeholder]="data2">
-            <label id="p1" class="label"></label>
+            <input formControlName="psw" id="p1" name="passW" class="input" type="password" [placeholder]="data2">
+          </div>
+          <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class="text-danger">Include numbers only</p>
           </div>
           <button (click)="login()" class="fs-5">Login</button>
 

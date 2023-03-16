@@ -4,29 +4,39 @@
     <div class=" col-lg-6 col-md-12 col-sm-12">
         <app-registercard></app-registercard>
 
-       
+
 
     </div>
 
     <div class="container col-lg-6 col-md-12  col-sm-12">
         <input id="register_toggle" type="checkbox">
         <div class="slider">
-            <form class="form">
+            <form [formGroup]="registerForm" class="form">
                 <span class="title text-white">SIGNUP</span>
                 <div class="form_control">
-                    <input [(ngModel)]="uname" id="Ruser" name="uname" class="input" type="text"
+                    <input formControlName="uname" id="Ruser" name="uname" class="input" type="text"
                         placeholder="User Name">
-                    <label class="label"></label>
                 </div>
+                <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched"
+                    class="text-danger">
+                    <p class="text-start">Include characters only</p>
+                </div>
+
                 <div class="form_control">
-                    <input [(ngModel)]="acno" id="Raccno" name="uname" class="input" type="text"
+                    <input formControlName="acno" id="Raccno" name="acno" class="input" type="text"
                         placeholder="Account Number">
-                    <label class="label"></label>
+                </div>
+                <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched"
+                    class="text-danger text-start">
+                    <p>Include numbers only</p>
                 </div>
                 <div class="form_control">
-                    <input [(ngModel)]="psw" id="Rpassw" name="passW" class="input" type="password"
+                    <input formControlName="psw" id="Rpassw" name="passW" class="input" type="password"
                         placeholder="Password">
-                    <label class="label"></label>
+                </div>
+                <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched"
+                    class="text-danger text-start">
+                    <p>Include character numbers only</p>
                 </div>
                 <button (click)="register()" type="submit" class="fs-5">Signup</button>
 

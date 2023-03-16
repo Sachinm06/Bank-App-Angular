@@ -107,6 +107,7 @@ used to manipulate DOM
 
 2.Structual dierectives
     - *ngFor
+    - *ngIf
 
 
 Form Validation in angular
@@ -126,4 +127,13 @@ Form Validation in angular
         -a model contain   -form group
                            -array
                            -controller
+
+Local Storage in angular
+-----------------------
+
+C - localStorage.setItem()
+R - localStorage.getItem()
+U - localStorage.setItem()
+D - localStorage.removeItem()
+
 

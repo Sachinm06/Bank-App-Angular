@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { DataService } from '../Services/data.service';
 
 @Component({
@@ -9,46 +10,61 @@ import { DataService } from '../Services/data.service';
 export class DashboardComponent {
 
   user: any
-  result: any
 
-  acno: any
-  psw: any
-  amt: any
-
-  acno1: any
-  psw1: any
-  amt1: any
-  constructor(private ds: DataService) {
+  constructor(private ds: DataService, private fb: FormBuilder) {
 
     //access data from dataservice and store in a variable
 
     this.user = this.ds.currentUser
 
   }
+  depositForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]],
+    amnt: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+  })
+  withdrawForm = this.fb.group({
+    acno1: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw1: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z]+')]],
+    amnt1: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+  })
+
   deposit() {
-    var acno = this.acno
-    var psw = this.psw
-    var amt = this.amt
-    const result = this.ds.deposit(acno, psw, amt)
-    if (result) {
-      alert(`your account has been credited with amount ${amt} and the available balance is ${result}`)
+    var acno = this.depositForm.value.acno
+    var psw = this.depositForm.value.psw
+    var amnt = this.depositForm.value.amnt
+    if(this.depositForm.valid){
+      const result = this.ds.deposit(acno, psw, amnt)
+      if (result) {
+        alert(`your account has been credited with amount ${amnt} and the available balance is ${result}`)
+      }
+      else {
+        alert('Incorrect account number or password')
+      }
     }
-    else {
-      alert('Incorrect account number or password')
+    else{
+      alert('Invalid form')
     }
+  
   }
 
   withdrew() {
-    var acno = this.acno1
-    var psw = this.psw1
-    var amt = this.amt1
-    const result = this.ds.withdrew(acno, psw, amt)
-    if (result) {
-      alert(`your account has been debited with amount ${amt} and the available balance is ${result}`)
+    var acno = this.withdrawForm.value.acno1
+    var psw = this.withdrawForm.value.psw1
+    var amnt = this.withdrawForm.value.amnt1
+    if(this.withdrawForm.valid){
+      const result = this.ds.withdrew(acno, psw, amnt)
+      if (result) {
+        alert(`your account has been debited with amount ${amnt} and the available balance is ${result}`)
+      }
+      else {
+        alert('Incorrect account number or password')
+      }
     }
-    else {
-      alert('Incorrect account number or password')
+    else{
+      alert('Invalid form')
     }
+  
   }
 }
 

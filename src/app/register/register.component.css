@@ -122,3 +122,16 @@ form button:active {
     font-weight: 700;
     cursor: pointer;
 }
+
+/* --------------------validation-------------------- */
+
+.valdiv1{
+    margin-top: -32px;
+    margin-bottom: -32px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(255, 0, 0, 0.843);
+}
+span{
+    color: rgba(0, 246, 0, 0.801);
+}

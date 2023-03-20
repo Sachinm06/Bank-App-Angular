@@ -125,4 +125,16 @@ form button:active {
 
 
 
-/* --------------------tagline-------------------- */
+/* --------------------validation-------------------- */
+
+.valdiv{
+    /* background-color: red; */
+    margin-top: -32px;
+    margin-bottom: -32px;
+    width: 100%;
+    font-size: 15px;
+    color: rgba(255, 0, 0, 0.843);
+}
+span{
+    color: rgba(0, 246, 0, 0.801);
+}

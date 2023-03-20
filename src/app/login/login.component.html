@@ -20,16 +20,19 @@
           <div class="form_control">
             <input formControlName="acno" name="uname" id="u1" class="input" type="text" [placeholder]="data1">
           </div>
-          <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
-            <p class="text-danger">Include numbers only</p>
+          <div class="valdiv" *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class=" ms-2">Invalid account number. Please enter only numbers and try again. <span>(e.g 1000)</span>
+            </p>
           </div>
 
 
           <div class="form_control">
             <input formControlName="psw" id="p1" name="passW" class="input" type="password" [placeholder]="data2">
           </div>
-          <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
-            <p class="text-danger">Include numbers only</p>
+          <div class="valdiv" *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class=" ms-2">Please enter your password. Special characters are not allowed. <span>(e.g abc123)</span>
+
+            </p>
           </div>
           <button (click)="login()" class="fs-5">Login</button>
 

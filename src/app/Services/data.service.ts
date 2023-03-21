@@ -7,15 +7,18 @@ export class DataService {
 
   currentUser: any
   currentAcno: any
+  userDetails:any
 
-  userDetails: any = {
-    1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transaction: [] },
-    1001: { username: "arun", acno: 1001, password: "abc123", balance: 0, transaction: [] },
-    1002: { username: "amal", acno: 1002, password: "abc123", balance: 0, transaction: [] },
-    1003: { username: "mega", acno: 1003, password: "abc123", balance: 0, transaction: [] },
+  // userDetails: any = {
+  //   1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transaction: [] },
+  //   1001: { username: "arun", acno: 1001, password: "abc123", balance: 0, transaction: [] },
+  //   1002: { username: "amal", acno: 1002, password: "abc123", balance: 0, transaction: [] },
+  //   1003: { username: "mega", acno: 1003, password: "abc123", balance: 0, transaction: [] },
+  // }
 
-  }
-  constructor() { }
+  constructor() {
+    this.getDetails()
+   }
 
 
   saveDetails() {
@@ -30,6 +33,18 @@ export class DataService {
     }
   }
 
+  getDetails() {
+    if (localStorage.getItem("userDetails")) {
+      this.userDetails = JSON.parse(localStorage.getItem("userDetails") || "")
+    }
+    if (localStorage.getItem("currentUser")) {
+      this.currentUser = localStorage.getItem("currentUser")
+    }
+    if (localStorage.getItem("currentAcno")) {
+      this.currentAcno = JSON.parse(localStorage.getItem("currentAcno") || "")
+    }
+  }
+
 
 
   register(acno: any, uname: any, psw: any) {
@@ -39,7 +54,7 @@ export class DataService {
     }
     else {
       userDetails[acno] = { username: uname, acno, password: psw, balance: 0, transaction: [] }
-      console.log(userDetails);
+      // console.log(userDetails);
       this.saveDetails()
       return true
     }

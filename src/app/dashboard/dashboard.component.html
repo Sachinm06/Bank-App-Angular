@@ -1,4 +1,8 @@
-<div>
+<div class="text-end" style="margin-top: -91px;margin-bottom: 40px;">
+    <button (click)="logout()" class="btn btn-secondary">logout</button>
+</div>
+
+<div class="text-end">
     <a class="view" routerLink="/transaction">View Transaction History</a>
 
 </div>
@@ -57,17 +61,19 @@
             <form [formGroup]="depositForm" class="dform" action="">
                 <input formControlName="acno" id="ac1" name="acno" class=" mb-3 " required=""
                     placeholder="Account Number">
-                <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
-                    <p class="text-white">Invalid Data</p>
+                <div class="valdiv"
+                    *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <input formControlName="psw" id="pw2" name="password" class=" mb-3" required="" type="password"
                     placeholder="Password">
-                <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
-                    <p>Invalid Data</p>
+                <div class="valdiv" *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <input formControlName="amnt" id="amt1" name="amnt" class=" mb-4" required="" placeholder="Amount">
-                <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
-                    <p>Invalid Data</p>
+                <div class="valdiv"
+                    *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <hr>
                 <button (click)="deposit()" class="dbtn btn btn-success fs-2 mt-3">DEPOSIT</button>
@@ -89,17 +95,20 @@
             <form [formGroup]="withdrawForm" class="dform" action="">
                 <input formControlName="acno1" name="acno2" id="ac2" class="d2 mb-3 " required=""
                     placeholder="Account Number">
-                <div *ngIf="this.withdrawForm.get('acno1')?.errors && this.withdrawForm.get('acno1')?.touched">
-                    <p>Invalid Data</p>
+                <div class="valdiv"
+                    *ngIf="this.withdrawForm.get('acno1')?.errors && this.withdrawForm.get('acno1')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <input formControlName="psw1" name="psw2" id="pw2" class="d2 mb-3" required="" type="password"
                     placeholder="Password">
-                <div *ngIf="this.withdrawForm.get('psw1')?.errors && this.withdrawForm.get('psw1')?.touched">
-                    <p>Invalid Data</p>
+                <div class="valdiv"
+                    *ngIf="this.withdrawForm.get('psw1')?.errors && this.withdrawForm.get('psw1')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <input formControlName="amnt1" name="amt2" id="amt2" class="d2 mb-4" required="" placeholder="Amount">
-                <div *ngIf="this.withdrawForm.get('amnt1')?.errors && this.withdrawForm.get('amnt1')?.touched">
-                    <p>Invalid Data</p>
+                <div class="valdiv"
+                    *ngIf="this.withdrawForm.get('amnt1')?.errors && this.withdrawForm.get('amnt1')?.touched">
+                    <p class="text-start">Invalid Data</p>
                 </div>
                 <hr>
                 <button (click)="withdrew()" class="dbtn btn btn-danger fs-2 mt-3">WITHDRAW</button>

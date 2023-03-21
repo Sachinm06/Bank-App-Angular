@@ -216,10 +216,10 @@ border-radius: 4px;
       text-transform: uppercase;
       color: #45feaf;
   }
-.d2{
+/* .d2{
     border: 1px solid #c22410;
 
-}
+} */
  
 
   /* ----------------------form-------------------- */
@@ -271,13 +271,21 @@ border-radius: 4px;
 .view{ 
   text-decoration: none;
   color: white;
-  display: flex;
-  justify-content: end;
-  margin-top: -77px;
-  margin-bottom: 50px;
+
+  /* background-color: red; */
 }
 .atmclick{
   font-size: 13.5px;
  align-items: center;
  color: rgba(255, 255, 255, 0.345);
+}
+
+/* --------------------validation-------------------- */
+
+.valdiv{
+  margin-top: -22px;
+  margin-bottom: -32px;
+  width: 100%;
+  font-size: 15px;
+  color: rgba(255, 0, 0, 0.843);
 }

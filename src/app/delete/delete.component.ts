@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-delete',
@@ -7,10 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DeleteComponent {
 
+  //event creation
+
+
 @Input() item:String |undefined
 
+@Output() onCancel=new EventEmitter()
+
+
 cancel(){
-  
+this.onCancel.emit()
 }
 
 }

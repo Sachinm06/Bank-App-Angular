@@ -1,13 +1,23 @@
+<div class="text-info">
+    <h6>{{sDetails | date:"short"}}</h6>
+</div>
+
 <div class="text-end" style="margin-top: -91px;margin-bottom: 40px;">
     <button (click)="logout()" class="btn btn-secondary">logout</button>
 </div>
 
-<div class="text-end">
+<div class="text-end" >
+    <button (click)="deleteAcc()" class="btn btn-danger">delete</button>
+</div>
+<app-delete [item]="acno"></app-delete>
+
+
+<div [ngClass]="acno?'s1':''" class="text-end">
     <a class="view" routerLink="/transaction">View Transaction History</a>
 
 </div>
 
-<div class="row">
+<div [ngClass]="acno?'s1':''" class="row">
 
     <div class="col-lg-4 col-md-6 col-sm-12 dashdiv1">
 

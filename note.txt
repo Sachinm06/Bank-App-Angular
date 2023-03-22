@@ -109,6 +109,8 @@ used to manipulate DOM
     - *ngFor
     - *ngIf
 
+3.Atribute dierectives
+    - [ngClass]
 
 Form Validation in angular
 -------------------------
@@ -137,3 +139,29 @@ U - localStorage.setItem()
 D - localStorage.removeItem()
 
 
+Child Parent Communication In angular
+-------------------------------------
+
+      parent - child data sharing
+      ---------------------------
+        @Input()  -   decorator used to share data from parent to child
+
+      child - parent data sharing
+      ---------------------------
+          
+
+
+Date and time in angular
+------------------------
+
+Date - class used to access current data in angular
+
+Angular Pipes
+-------------
+
+used to convert data to another format
+
+Event Creation in Angular (user defined events)
+-------------------------
+   EventEmitter - class used to create events
+   

@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
     //access data from dataservice and store in a variable
 
-    this.user = this.ds.currentUser
+    this.user = localStorage.getItem("currentUser")
 
     this.sDetails = new Date()
 
@@ -48,15 +48,15 @@ export class DashboardComponent implements OnInit {
     var amnt = this.depositForm.value.amnt
     if (this.depositForm.valid) {
       const result = this.ds.deposit(acno, psw, amnt)
-      if (result) {
-        alert(`your account has been credited with amount ${amnt} and the available balance is ${result}`)
-      }
-      else {
-        alert('Incorrect account number or password')
-      }
-    }
-    else {
-      alert('Invalid form')
+    //   if (result) {
+    //     alert(`your account has been credited with amount ${amnt} and the available balance is ${result}`)
+    //   }
+    //   else {
+    //     alert('Incorrect account number or password')
+    //   }
+    // }
+    // else {
+    //   alert('Invalid form')
     }
 
   }
@@ -67,15 +67,15 @@ export class DashboardComponent implements OnInit {
     var amnt = this.withdrawForm.value.amnt1
     if (this.withdrawForm.valid) {
       const result = this.ds.withdrew(acno, psw, amnt)
-      if (result) {
-        alert(`your account has been debited with amount ${amnt} and the available balance is ${result}`)
-      }
-      else {
-        alert('Incorrect account number or password')
-      }
-    }
-    else {
-      alert('Invalid form')
+    //   if (result) {
+    //     alert(`your account has been debited with amount ${amnt} and the available balance is ${result}`)
+    //   }
+    //   else {
+    //     alert('Incorrect account number or password')
+    //   }
+    // }
+    // else {
+    //   alert('Invalid form')
     }
 
   }

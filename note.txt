@@ -166,3 +166,33 @@ Event Creation in Angular (user defined events)
    EventEmitter - class used to create events
    
    emit()  -method used to specify when the event happens
+
+
+
+API Creation in angular
+-----------------------
+
+HttpClientModule   - module
+HttpClient         - class
+
+   methods
+   -------
+
+   get post put patch delete 
+
+
+
+
+-----------------------------------------
+Asynchronous in JS   
+
+    promise   - then()
+              - catch()
+
+
+Asynchronous in TS        rxjs (reactive extension for js)
+         
+    observable - subscribe()
+               - catch()
+------------------------------------------               
+

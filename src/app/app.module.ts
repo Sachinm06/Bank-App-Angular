@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { RegistercardComponent } from './registercard/registercard.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { DeleteComponent } from './delete/delete.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { DeleteComponent } from './delete/delete.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

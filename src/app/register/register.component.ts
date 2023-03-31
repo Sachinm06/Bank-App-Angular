@@ -14,16 +14,16 @@ export class RegisterComponent {
   uname: any
   psw: any
 
-  d1="Enter account number"
-  d2="enter password"
+  d1 = "Enter account number"
+  d2 = "enter password"
 
   constructor(private ds: DataService, private router: Router, private fb: FormBuilder) { }
 
   //model for register form 
   registerForm1 = this.fb.group({
-    acno: [' ',[Validators.required,Validators.pattern('[0-9]+')]],
-    psw: [' ',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]],
-    uname: ['',[Validators.required,Validators.pattern('[a-zA-Z]+')]]
+    acno: [' ', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: [' ', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]]
   })
 
 
@@ -31,21 +31,18 @@ export class RegisterComponent {
     var acno = this.registerForm1.value.acno
     var psw = this.registerForm1.value.psw
     var uname = this.registerForm1.value.uname
-    if(this.registerForm1.valid){
-      const result = this.ds.register(acno, uname, psw)
-      if (result) {
-        alert('registred')
+    if (this.registerForm1.valid) {
+      this.ds.register(acno, uname, psw).subscribe((result: any) => {
+        alert(result.messsage)
         this.router.navigateByUrl("")
-      }
-      else {
-        alert('user already present')
-      }
+      },
+        result => {
+          alert(result.error.messsage)
+        }
+      )
     }
-    else{
-      alert('Invalid Form')
-    }
-  
-  }
-
+else{
+  alert("Invalid form")
 }
-
+  }
+}

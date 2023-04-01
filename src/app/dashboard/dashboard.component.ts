@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   acno: any
   user: any
   sDetails: any
+  
 
   constructor(private ds: DataService, private fb: FormBuilder, private router: Router) {
 
@@ -47,16 +48,17 @@ export class DashboardComponent implements OnInit {
     var psw = this.depositForm.value.psw
     var amnt = this.depositForm.value.amnt
     if (this.depositForm.valid) {
-      const result = this.ds.deposit(acno, psw, amnt)
-    //   if (result) {
-    //     alert(`your account has been credited with amount ${amnt} and the available balance is ${result}`)
-    //   }
-    //   else {
-    //     alert('Incorrect account number or password')
-    //   }
-    // }
-    // else {
-    //   alert('Invalid form')
+      this.ds.deposit(acno, psw, amnt).subscribe((result: any) => {
+        alert(result.messsage)
+      },
+        result => {
+          alert(result.error.messsage)
+        }
+      )
+
+    }
+    else {
+      alert('Invalid form')
     }
 
   }
@@ -66,16 +68,17 @@ export class DashboardComponent implements OnInit {
     var psw = this.withdrawForm.value.psw1
     var amnt = this.withdrawForm.value.amnt1
     if (this.withdrawForm.valid) {
-      const result = this.ds.withdrew(acno, psw, amnt)
-    //   if (result) {
-    //     alert(`your account has been debited with amount ${amnt} and the available balance is ${result}`)
-    //   }
-    //   else {
-    //     alert('Incorrect account number or password')
-    //   }
-    // }
-    // else {
-    //   alert('Invalid form')
+      this.ds.withdrew(acno, psw, amnt).subscribe((result: any) => {
+        alert(result.messsage)
+      },
+        result => {
+          alert(result.error.messsage)
+        }
+      )
+
+    }
+    else {
+      alert('Invalid form')
     }
 
   }
@@ -89,8 +92,8 @@ export class DashboardComponent implements OnInit {
     this.acno = JSON.parse(localStorage.getItem("currentAcno") || "")
   }
 
-  cancelChild(){
-    this.acno=""
+  cancelChild() {
+    this.acno = ""
   }
 
 }

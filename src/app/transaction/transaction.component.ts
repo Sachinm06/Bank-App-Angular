@@ -11,10 +11,10 @@ export class TransactionComponent {
   transactionArray: any
 
   constructor(private ds: DataService) {
-    this.transactionArray = this.ds.getTransaction(this.ds.currentAcno)
-
-    console.log(this.transactionArray);
-
+    this.ds.getTransaction(JSON.parse(localStorage.getItem("currentAcno") || "")).subscribe(
+      (result: any) => {
+        this.transactionArray = result.transaction
+      })
   }
 
 }

@@ -1,14 +1,21 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+//create global header for header overloading 
+const option = {
+  headers: new HttpHeaders()
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class DataService {
 
   currentUser: any
   currentAcno: any
-  userDetails:any
+  userDetails: any
 
   // userDetails: any = {
   //   1000: { username: "anu", acno: 1000, password: "abc123", balance: 0, transaction: [] },
@@ -17,9 +24,9 @@ export class DataService {
   //   1003: { username: "mega", acno: 1003, password: "abc123", balance: 0, transaction: [] },
   // }
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
     // this.getDetails()
-   }
+  }
 
 
   // saveDetails() {
@@ -47,91 +54,49 @@ export class DataService {
   // }
 
 
+  getToken() {
+    //access token
+    const token = JSON.parse(localStorage.getItem("token") || "")
+    //generate header
+    let headers = new HttpHeaders()
+    //check token accessed or not 
+    if (token) {
+      //add the token into headers
+      option.headers = headers.append('access_token', token)
+    }
+    return option
+  }
+
+
 
   register(acno: any, uname: any, psw: any) {
-  const data={acno,uname,psw}
-  return this.http.post('http://localhost:3000/register',data)
+    const data = { acno, uname, psw }
+    return this.http.post('http://localhost:3000/register', data)
   }
 
   login(acno: any, psw: any) {
-  const data={acno,psw}
-  return this.http.post('http://localhost:3000/login',data)
+    const data = { acno, psw }
+    return this.http.post('http://localhost:3000/login', data)
   }
 
 
-  deposit(acno: any, psw: any, amt: any) {
-    // //to convert string amount to int
-    // var amount = parseInt(amt)
-    // var userDetails = this.userDetails
+  deposit(acno: any, psw: any, amnt: any) {
+    const data = { acno, psw, amnt }
+    return this.http.post('http://localhost:3000/deposit', data, this.getToken())
 
-    // if (acno in userDetails) {
-    //   if (psw == userDetails[acno]["password"]) {
-    //     userDetails[acno]["balance"] += amount
-
-    //     //add transaction data
-    //     userDetails[acno]["transaction"].push(
-    //       {
-    //         type: "credit",
-    //         amount: amount
-    //       }
-    //     )
-    //     this.saveDetails()
-
-    //     return userDetails[acno]["balance"]
-
-    //   }
-    //   else {
-    //     return false
-    //   }
-    // }
-    // else {
-    //   return false
-    // }
   }
 
 
 
 
-  withdrew(acno: any, psw: any, amt: any) {
-    // //to convert string amount to int
-    // var amount = parseInt(amt)
-    // var userDetails = this.userDetails
-
-    // if (acno in userDetails) {
-    //   if (psw == userDetails[acno]["password"]) {
-    //     if (amount <= userDetails[acno]["balance"]) {
-    //       userDetails[acno]["balance"] -= amount
-
-    //       //add transaction data
-    //       userDetails[acno]["transaction"].push(
-    //         {
-    //           type: "debit",
-    //           amount: amount
-    //         }
-    //       )
-    //       console.log(userDetails);
-
-    //       this.saveDetails()
-
-    //       return userDetails[acno]["balance"]
-
-    //     }
-    //     else {
-    //       alert('insufficient balance')
-    //     }
-
-    //   }
-    //   else {
-    //     return false
-    //   }
-    // }
-    // else {
-    //   return false
-    // }
+  withdrew(acno: any, psw: any, amnt: any) {
+    const data = { acno, psw, amnt }
+    return this.http.post('http://localhost:3000/withdrew', data, this.getToken())
   }
 
   getTransaction(acno: any) {
-    // return this.userDetails[acno].transaction
+  const data ={acno}
+  return this.http.post('http://localhost:3000/getTransaction',data,this.getToken())
   }
 
 }

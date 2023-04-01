@@ -196,3 +196,10 @@ Asynchronous in TS        rxjs (reactive extension for js)
                - catch()
 ------------------------------------------               
 
+
+Headers Creation In Angular
+---------------------------
+
+HttpHeaders   -   class used to generate Headers
+
+

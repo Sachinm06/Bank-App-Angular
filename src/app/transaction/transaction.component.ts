@@ -14,6 +14,8 @@ export class TransactionComponent {
     this.ds.getTransaction(JSON.parse(localStorage.getItem("currentAcno") || "")).subscribe(
       (result: any) => {
         this.transactionArray = result.transaction
+        console.log(this.transactionArray);
+        
       })
   }
 

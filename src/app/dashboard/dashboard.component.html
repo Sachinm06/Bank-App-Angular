@@ -9,7 +9,7 @@
 <div class="text-end" >
     <button (click)="deleteAcc()" class="btn btn-danger">delete</button>
 </div>
-<app-delete (onCancel)="cancelChild()" [item]="acno"></app-delete>
+<app-delete (onDelete)="ondeleteAcc($event)" (onCancel)="cancelChild()" [item]="acno"></app-delete>
 
 
 <div [ngClass]="acno?'s1':''" class="text-end">

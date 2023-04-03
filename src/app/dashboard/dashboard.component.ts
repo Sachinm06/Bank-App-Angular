@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   acno: any
   user: any
   sDetails: any
-  
+
 
   constructor(private ds: DataService, private fb: FormBuilder, private router: Router) {
 
@@ -94,6 +94,14 @@ export class DashboardComponent implements OnInit {
 
   cancelChild() {
     this.acno = ""
+  }
+
+  ondeleteAcc(event: any) {
+    this.ds.deleteAcc(event).subscribe((result: any) => {
+      alert(result.messsage)
+      // this.router.navigateByUrl("")
+      this.logout()
+    })
   }
 
 }

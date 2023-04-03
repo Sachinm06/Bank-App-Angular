@@ -13,10 +13,16 @@ export class DeleteComponent {
 @Input() item:String |undefined
 
 @Output() onCancel=new EventEmitter()
+@Output() onDelete=new EventEmitter()
 
 
 cancel(){
 this.onCancel.emit()
 }
+
+delete(){
+  this.onDelete.emit(this.item)
+}
+
 
 }

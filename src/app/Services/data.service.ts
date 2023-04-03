@@ -95,9 +95,14 @@ export class DataService {
   }
 
   getTransaction(acno: any) {
-  const data ={acno}
-  return this.http.post('http://localhost:3000/getTransaction',data,this.getToken())
+    const data = { acno }
+    return this.http.post('http://localhost:3000/getTransaction', data, this.getToken())
   }
+
+  deleteAcc(acno: any) {
+    return this.http.delete('http://localhost:3000/delete' + acno, this.getToken())
+  }
+
 
 }
 

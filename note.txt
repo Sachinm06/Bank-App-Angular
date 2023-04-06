@@ -60,7 +60,7 @@ HTML - view
 Path setting in angular
 ----------------------
 
-path set in root moduke routing file
+path set in root module routing file
 each page need defferent paths
 landing page path is empty
 

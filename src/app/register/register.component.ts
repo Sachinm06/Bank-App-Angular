@@ -41,8 +41,8 @@ export class RegisterComponent {
         }
       )
     }
-else{
-  alert("Invalid form")
-}
+    else {
+      alert("Invalid form")
+    }
   }
 }

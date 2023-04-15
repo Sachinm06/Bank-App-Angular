@@ -100,7 +100,7 @@ export class DataService {
   }
 
   deleteAcc(acno: any) {
-    return this.http.delete('http://localhost:3000/delete' + acno, this.getToken())
+    return this.http.delete('http://localhost:3000/deleteacc' + acno, this.getToken())
   }
 
 
